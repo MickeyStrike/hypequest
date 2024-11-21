@@ -1,0 +1,123 @@
+[
+    {
+        "chain_id": 1,
+        "chain_name": "Ethereum Mainnet",
+        "symbol": "ETH",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_ethereum.jpg",
+        "rpc_url": [
+            "https://ethereum.publicnode.com",
+            "https://eth.llamarpc.com"
+        ],
+        "explorer_url": "https://etherscan.io",
+        "is_support": true
+    },
+    {
+        "chain_id": 56,
+        "chain_name": "Binance Smart Chain Mainnet",
+        "symbol": "BNB",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_binance.jpg",
+        "rpc_url": [
+            "https://bsc-dataseed1.defibit.io",
+            "https://bsc-dataseed2.defibit.io",
+            "https://bsc-dataseed3.defibit.io",
+            "https://binance.llamarpc.com",
+            "https://bsc-dataseed1.ninicoin.io"
+        ],
+        "explorer_url": "https://bscscan.com",
+        "is_support": true
+    },
+    {
+        "chain_id": 137,
+        "chain_name": "Polygon Mainnet",
+        "symbol": "MATIC",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_polygon.jpg",
+        "rpc_url": [
+            "https://polygon.llamarpc.com",
+            "https://polygon-rpc.com"
+        ],
+        "explorer_url": "https://polygonscan.com",
+        "is_support": true
+    },
+    {
+        "chain_id": 42161,
+        "chain_name": "Arbitrum One",
+        "symbol": "ARB",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_arbitrum.jpg",
+        "rpc_url": [
+            "https://arbitrum.llamarpc.com"
+        ],
+        "explorer_url": "https://arbiscan.io",
+        "is_support": true
+    },
+    {
+        "chain_id": 43114,
+        "chain_name": "Avalanche C-Chain",
+        "symbol": "AVAX",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_avalanche.jpg",
+        "rpc_url": [
+            "https://api.avax.network/ext/bc/C/rpc",
+            "https://avalanche.public-rpc.com"
+        ],
+        "explorer_url": "https://snowtrace.io",
+        "is_support": true
+    },
+    {
+        "chain_id": 10,
+        "chain_name": "Optimism",
+        "symbol": "OP",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_optimism.jpg",
+        "rpc_url": [
+            "https://mainnet.optimism.io",
+            "https://optimism-mainnet.infura.io/v3/"
+        ],
+        "explorer_url": "https://optimistic.etherscan.io",
+        "is_support": true
+    },
+    {
+        "chain_id": 250,
+        "chain_name": "Fantom Opera",
+        "symbol": "FTM",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_fantom.jpg",
+        "rpc_url": [
+            "https://rpcapi.fantom.network",
+            "https://rpc.ftm.tools/"
+        ],
+        "explorer_url": "https://ftmscan.com",
+        "is_support": false
+    },
+    {
+        "chain_id": 128,
+        "chain_name": "Huobi ECO Chain",
+        "symbol": "HT",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_heco.jpg",
+        "rpc_url": [
+            "https://http-mainnet.hecochain.com",
+            "https://heco-mainnet.nodereal.io/v1/YOUR-API-KEY"
+        ],
+        "explorer_url": "https://hecoinfo.com",
+        "is_support": false
+    },
+    {
+        "chain_id": 1666600000,
+        "chain_name": "Harmony",
+        "symbol": "ONE",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_harmony.jpg",
+        "rpc_url": [
+            "https://api.harmony.one",
+            "https://s1.api.harmony.one"
+        ],
+        "explorer_url": "https://explorer.harmony.one",
+        "is_support": false
+    },
+    {
+        "chain_id": 100,
+        "chain_name": "Gnosis Chain",
+        "symbol": "xDAI",
+        "icon_url": "https://icons.llamao.fi/icons/chains/rsz_xdai.jpg",
+        "rpc_url": [
+            "https://rpc.gnosischain.com"
+        ],
+        "explorer_url": "https://gnosisscan.io",
+        "is_support": false
+    }
+]

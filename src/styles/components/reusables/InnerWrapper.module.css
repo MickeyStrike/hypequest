@@ -1,0 +1,9 @@
+.wrapper {
+  width: attr(data-width rem);
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    width: calc(11/12 * 100%);
+  }
+}

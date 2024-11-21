@@ -1,0 +1,40 @@
+.root-wrapper-lighten {
+  position: relative;
+  background-color: linear-gradient(267deg, rgba(255, 255, 255, 0.00) 11.23%, rgba(255, 255, 255, 0.15) 45.55%, rgba(255, 255, 255, 0.00) 84.44%, rgba(255, 255, 255, 0.00) 84.44%);
+}
+
+.root-wrapper-lighten::after {
+  content: "";
+  background: url('/bg/blue-artistic-abstract-backgorund-2.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.root-wrapper-darken {
+  position: relative;
+  background-color: radial-gradient(145.66% 111.22% at 59.9% 15.09%, rgba(143, 10, 10, 0.00) 27.25%, rgba(49, 0, 111, 0.33) 61.05%, rgba(183, 145, 48, 0.04) 83.53%, rgba(183, 145, 48, 0.00) 100%), #050505;
+}
+
+.root-wrapper-darken::after {
+  content: "";
+  background-color: radial-gradient(145.66% 111.22% at 59.9% 15.09%, rgba(143, 10, 10, 0.00) 27.25%, rgba(49, 0, 111, 0.33) 61.05%, rgba(183, 145, 48, 0.04) 83.53%, rgba(183, 145, 48, 0.00) 100%), #050505;
+  background: url('/bg/abstract-background-grid-squares-2.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}

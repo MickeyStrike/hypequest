@@ -1,0 +1,70 @@
+.countdown-circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.countdown-circle .circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-circle .circle svg {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(270deg);
+}
+
+.countdown-circle .circle svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 8;
+  stroke: #282828;
+  transform: translate(5px, 5px);
+}
+
+.countdown-circle .circle svg circle:nth-child(2) {
+  stroke: var(--clr);
+  stroke-dasharray: 220;
+  stroke-dashoffset: var(--stroke-dashoffset);
+}
+
+.countdown-circle .circle div {
+  position: absolute;
+  text-align: center;
+  font-weight: 500;
+  font-size: .5em;
+}
+
+.countdown-circle .circle .dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1;
+  transform: rotateZ(0);
+}
+
+.countdown-circle .circle .dots::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--clr);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+
+.countdown-circle .circle .label {
+  line-height: normal;
+  max-width: 40px;
+  text-align: center;
+  font-size: 12px;
+}
