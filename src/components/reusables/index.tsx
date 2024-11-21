@@ -8,7 +8,7 @@ import RootComponent from "./RootComponent";
 import RootCreateProfile from "./RootCreateProfile";
 import CustomModal from "./CustomModal";
 import CustomMilestoneRewardIcon from "./CustomMilestoneRewardIcon";
-import LuckyWheel from "./LuckyWheel";
+// import LuckyWheel from "./LuckyWheel";
 import JoinHypequestPublicModal from "./JoinHypequestPublicModal";
 import WelcomeHypequestPublicModal from "./WelcomeHypequestPublicModal";
 import ConnectHypequestPublicModal from "./ConnectHypequestPublicModal";
@@ -36,7 +36,7 @@ export {
   RootCreateProfile,
   CustomModal,
   CustomMilestoneRewardIcon,
-  LuckyWheel,
+  // LuckyWheel,
   JoinHypequestPublicModal,
   WelcomeHypequestPublicModal,
   ConnectHypequestPublicModal,
