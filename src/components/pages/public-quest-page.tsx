@@ -7,7 +7,7 @@ import { ILastMissionResponse, LastMissionEnum } from "@/types/service-types";
 import { AvatarGroup, SelectItem } from "@nextui-org/react";
 import { useFormik } from "formik";
 import { NextPage } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope } from "@next/font/google";
 import CheckIcon from "@/components/assets/images/check.png"
 import NextImage from "next/image"
 import XP1 from "@/components/assets/images/quests/xp/xp_1.png"

@@ -12,7 +12,7 @@ import { defaultPath, marketplacePath, profilePath, questboardPath, questsPath }
 import { AlertModalType, useModal } from "@/providers/modal";
 import { ListboxItem, ModalContent, useDisclosure } from "@nextui-org/react";
 import NextImage from "next/image"
-import { DM_Sans, Manrope, Roboto } from "next/font/google";
+import { DM_Sans, Manrope, Roboto } from "@next/font/google";
 import { useFormik } from "formik";
 import useProfileService from "@/services/profile-service";
 import { ActiveTabEnum, ActiveTabKey, IClient, IEmailSetRequest, IEmailVerifyRequest, IGetProfile, INameSetRequest } from "@/types/service-types";

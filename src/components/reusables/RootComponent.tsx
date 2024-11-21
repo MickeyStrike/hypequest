@@ -1,5 +1,5 @@
 "use client"
-import { Inter } from 'next/font/google'
+import { Inter } from '@next/font/google'
 import Provider from '@/providers'
 import NextImage from "next/image"
 import HeroDarkBackground from '@/assets/abstract-background-grid-squares-2.png'

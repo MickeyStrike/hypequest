@@ -1,6 +1,6 @@
 import { useGlobalContext } from "@/providers/stores";
 import { Progress } from "@nextui-org/react";
-import { Roboto } from "next/font/google";
+import { Roboto } from "@next/font/google";
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 import { ThemeProgress } from "./NextuiTheme";
 import { fixedNumber } from "@/helper";

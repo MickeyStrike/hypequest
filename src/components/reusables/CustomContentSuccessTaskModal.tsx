@@ -3,7 +3,7 @@ import { FC, Fragment } from "react";
 import NextImage from "next/image"
 import coinsBackground from "@/components/assets/images/coins.png"
 import { ThemeButton, ThemeChip, ThemeDivider, ThemeModalBody, ThemeModalHeader } from "./NextuiTheme";
-import { Manrope, Montserrat, Poppins } from "next/font/google";
+import { Manrope, Montserrat, Poppins } from "@next/font/google";
 import { CustomMilestoneRewardIcon } from ".";
 import { useGlobalContext } from "@/providers/stores";
 import { GetPublicMission, IPublicClientResponse, StageRewardTypeEnum } from "@/types/service-types";

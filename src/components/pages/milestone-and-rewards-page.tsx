@@ -10,7 +10,7 @@ import useClientService from '@/services/client-service';
 import { AlertModalType, useModal } from '@/providers/modal';
 import { useRouter, useSearchParams } from 'next/navigation';
 import * as yup from "yup";
-import { Manrope } from "next/font/google";
+import { Manrope } from "@next/font/google";
 import { LinkIcon, MarketplaceXP2Icon, TwitterXBlackIcon } from '../assets/icons';
 import { AxiosError } from 'axios';
 import { toast } from 'react-toastify';

@@ -14,7 +14,7 @@ import { CardBody, CardHeader, ModalBody, ModalContent, ModalHeader, SelectItem,
 import { useFormik } from "formik";
 import { DateTime } from "luxon";
 import { NextPage } from "next";
-import { DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "@next/font/google";
 import NextImage from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { Fragment, useEffect, useMemo } from "react";

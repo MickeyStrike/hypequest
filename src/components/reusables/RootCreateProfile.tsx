@@ -4,7 +4,7 @@ import CustomSidebar from '@/components/reusables/CustomSidebar'
 import { useMinimizedState } from '@/helper'
 import { FormContext, InitialFormProperties, initialFormProperties } from '@/providers/project-form-stores'
 import { useGlobalContext } from '@/providers/stores'
-import { DM_Sans } from 'next/font/google'
+import { DM_Sans } from '@next/font/google'
 import { useSearchParams } from 'next/navigation'
 import React, { FC, PropsWithChildren, useMemo } from 'react'
 

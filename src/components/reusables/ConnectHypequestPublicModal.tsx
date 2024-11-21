@@ -2,7 +2,7 @@
 import { FC, Fragment, ReactNode, useEffect, useMemo } from "react";
 import { ThemeAvatar, ThemeButton, ThemeDivider, ThemeModal, ThemeModalBody, ThemeModalHeader } from "./NextuiTheme";
 import { ModalBody, ModalContent, ModalFooter, ModalHeader, UseDisclosureProps, useDisclosure } from "@nextui-org/react";
-import { DM_Sans, Manrope, Montserrat, Poppins } from "next/font/google"
+import { DM_Sans, Manrope, Montserrat, Poppins } from "@next/font/google"
 import { useGlobalContext } from "@/providers/stores";
 import { AcceptIcon, ConnectIllustrationIcon, ConnectWalletIcon, DiscordConnectIcon, MainXpSmallIcon, OldTwitterIcon, TelegramConnectIcon, WelcomeXPIcon, ZealySmallIcon } from "../assets/icons";
 import { CustomContentSuccessTaskModal, CustomMilestoneRewardIcon, TelegramAuth } from ".";

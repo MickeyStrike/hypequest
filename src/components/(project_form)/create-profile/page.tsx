@@ -6,7 +6,7 @@ import { useGlobalContext } from "@/providers/stores";
 import useClientService from "@/services/client-service";
 import { useFormik } from "formik";
 import { NextPage } from "next";
-import { DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "@next/font/google";
 import React, { useEffect } from "react";
 import dataListChain from '@/localeData/list_chains.json'
 import Image from "next/image";

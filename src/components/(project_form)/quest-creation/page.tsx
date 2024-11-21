@@ -13,7 +13,7 @@ import { useFormContext } from "@/providers/project-form-stores";
 import { useGlobalContext } from "@/providers/stores";
 import { AccordionItem, SelectItem, cn } from "@nextui-org/react";
 import { NextPage } from "next";
-import { DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "@next/font/google";
 import NextImage from "next/image";
 import React, { Fragment, ReactNode, useEffect } from "react";
 import Xp from '@/components/assets/images/XP.png'

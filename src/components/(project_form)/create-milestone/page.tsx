@@ -7,7 +7,7 @@ import { useFormContext } from "@/providers/project-form-stores";
 import { useGlobalContext } from "@/providers/stores";
 import { Avatar, Button, Card, CardBody, Checkbox, Chip, Input, Listbox, ListboxItem, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Progress, Switch, Textarea, Tooltip, useDisclosure } from "@nextui-org/react";
 import { NextPage } from "next";
-import { DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "@next/font/google";
 import NextImage from "next/image";
 import React, { Fragment, useEffect } from "react";
 

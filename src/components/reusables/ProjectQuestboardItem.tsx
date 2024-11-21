@@ -1,6 +1,6 @@
 "use client"
 import { CustomQuestboard, GetPublicMission, StageRewardTypeEnum } from "@/types/service-types";
-import { DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "@next/font/google";
 import { FC, ReactNode } from "react";
 import { ThemeAccordion, ThemeAvatar, ThemeButton, ThemeChip } from "./NextuiTheme";
 import { DateTime } from "luxon";

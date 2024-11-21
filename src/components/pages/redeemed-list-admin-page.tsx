@@ -1,7 +1,7 @@
 "use client"
 import { FC, Fragment, useEffect } from "react";
 import { IApprovalRedeemListRequest, IClient, IGetRedeemListResponse, IGetRedeemListStatus } from "@/types/service-types";
-import { DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "@next/font/google";
 import { DropzoneReturnValues, ThemeButton, ThemeChip, ThemeDivider, ThemeDropzone, ThemeInput, ThemeModal, ThemeModalBody, ThemeModalHeader, ThemePagination, ThemeSwitch, ThemeTable, ThemeTextarea, ThemeWYSIWYG } from "../reusables/NextuiTheme";
 import { capitalizeFirstLetter, downloadFile, getListDescription, useDebounce, useMinimizedState } from "@/helper";
 import { ModalContent, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";

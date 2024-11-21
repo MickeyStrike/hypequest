@@ -14,7 +14,7 @@ import { CardBody, SelectItem } from "@nextui-org/react";
 import { AxiosError } from "axios";
 import { FormikErrors, useFormik } from "formik";
 import { NextPage } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope } from "@next/font/google";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { Fragment, useEffect } from "react";
 import { toast } from "react-toastify";

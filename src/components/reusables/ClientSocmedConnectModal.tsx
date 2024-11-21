@@ -2,7 +2,7 @@
 import { FC, Fragment, ReactNode, useEffect } from "react";
 import { ThemeAlert, ThemeAlertType, ThemeButton, ThemeCard, ThemeCardBody, ThemeDivider, ThemeInput, ThemeModal, ThemeModalBody, ThemeTabs } from "./NextuiTheme";
 import { ModalContent, ModalFooter, ModalHeader, Tab, UseDisclosureProps, useDisclosure } from "@nextui-org/react";
-import { Manrope } from "next/font/google";
+import { Manrope } from "@next/font/google";
 import { DiscordIcon, TelegramIcon, TwitterXIcon } from "../assets/icons";
 import { useGlobalContext } from "@/providers/stores";
 import useClientService from "@/services/client-service";

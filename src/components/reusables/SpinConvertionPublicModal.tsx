@@ -2,7 +2,7 @@
 import { FC, Fragment } from "react";
 import { ThemeButton, ThemeModal, ThemeModalBody, ThemeSwitch } from "./NextuiTheme";
 import { ModalContent, ModalFooter, ModalHeader, UseDisclosureProps, useDisclosure } from "@nextui-org/react";
-import { DM_Sans, Manrope, Montserrat } from "next/font/google"
+import { DM_Sans, Manrope, Montserrat } from "@next/font/google"
 import { useGlobalContext } from "@/providers/stores";
 import { MainXpSmallIcon, SpinModalIcon, ZealySmallIcon } from "../assets/icons";
 import { IConvertionConsumptionSpin, IPublicClientResponse } from "@/types/service-types";

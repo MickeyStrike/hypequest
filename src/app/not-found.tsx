@@ -4,7 +4,7 @@ import { InnerWrapper, OuterWrapper } from "@/components/reusables";
 import { ThemeButton } from "@/components/reusables/NextuiTheme";
 import { useGlobalContext } from "@/providers/stores";
 import { NextPage } from "next";
-import { DM_Sans } from "next/font/google"
+import { DM_Sans } from "@next/font/google"
 import NextLink from "next/link"
 
 const dmSans400 = DM_Sans({weight: "400", subsets: ["latin"]})

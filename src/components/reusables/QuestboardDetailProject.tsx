@@ -4,7 +4,7 @@ import { FC, Fragment, PromiseLikeOfReactNode, ReactNode } from "react";
 import NextImage from "next/image"
 import { ThemeAccordion, ThemeAvatar, ThemeButton, ThemePagination } from "./NextuiTheme";
 import { useMinimizedState } from "@/helper";
-import { DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "@next/font/google";
 import { UploadIcon } from "../assets/icons";
 import { AccordionItem } from "@nextui-org/react";
 import { CustomMilestoneRewardIcon } from ".";

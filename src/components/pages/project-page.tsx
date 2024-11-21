@@ -4,7 +4,7 @@ import { ConnectHypequestPublicModal, CountdownCircle, CustomContentSuccessTaskM
 import { ThemeAccordion, ThemeAlert, ThemeAlertType, ThemeAvatar, ThemeButton, ThemeCard, ThemeCardBody, ThemeCardHeader, ThemeChip, ThemeDivider, ThemeDropdown, ThemeModal, ThemeModalBody, ThemeModalHeader, ThemePagination, ThemePopover, ThemeSelect, ThemeSpinner, ThemeSwitch, ThemeTable, ThemeTabs, ThemeTooltip } from "@/components/reusables/NextuiTheme";
 import { useGlobalContext } from "@/providers/stores";
 import { AccordionItem, AvatarGroup, Button, CardBody, DropdownItem, DropdownMenu, DropdownTrigger, ModalContent, PopoverContent, PopoverTrigger, SelectItem, Tab, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";
-import { DM_Sans, Manrope, Roboto } from "next/font/google";
+import { DM_Sans, Manrope, Roboto } from "@next/font/google";
 import SplashCoin from "@/components/assets/images/splash-coin.png"
 import NextImage from "next/image"
 import { FC, Fragment, ReactNode, useCallback, useEffect, useMemo, useRef } from "react";

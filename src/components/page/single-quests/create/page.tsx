@@ -14,7 +14,7 @@ import { IGetDiscordRolesResponse, ITemplatePlatform, ListContentTemplate, ListC
 import { AccordionItem, SelectItem } from "@nextui-org/react";
 import { useFormik } from "formik";
 import { NextPage } from "next";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans } from "@next/font/google";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Fragment, useEffect, useMemo } from "react";
 import * as yup from "yup";

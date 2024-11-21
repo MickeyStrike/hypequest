@@ -2,7 +2,7 @@
 import { FC, Fragment } from "react";
 import { ThemeAvatar, ThemeButton, ThemeModal, ThemeModalBody } from "./NextuiTheme";
 import { ModalBody, ModalContent, ModalFooter, ModalHeader, UseDisclosureProps, useDisclosure } from "@nextui-org/react";
-import { DM_Sans, Manrope, Montserrat } from "next/font/google"
+import { DM_Sans, Manrope, Montserrat } from "@next/font/google"
 import { useGlobalContext } from "@/providers/stores";
 import { ChecklistJoinPublicIcon, HypequestJoinPublicIcon, TwitterXIcon } from "../assets/icons";
 import { IGetUserInfo, ILuckyWheelCustom, LuckyWheelTypesEnum } from "@/types/service-types";

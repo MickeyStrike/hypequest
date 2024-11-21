@@ -13,7 +13,7 @@ import useClientService from "@/services/client-service";
 import { ActiveTabEnum, IClient } from "@/types/service-types";
 import { SelectItem, Tab } from "@nextui-org/react";
 import { NextPage } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope } from "@next/font/google";
 import { useRouter } from "next/navigation";
 import { FC, useEffect } from "react";
 

@@ -3,7 +3,7 @@ import { IMarketplaceDetail, IMarketplacePublicGet, IMarketplaceRedeemRequest, I
 import { FC, Fragment, useEffect } from "react";
 import { Inner2Wrapper, InnerWrapper, OuterWrapper } from "../reusables";
 import { ThemeAvatar, ThemeButton, ThemeCard, ThemeCardBody, ThemeChip, ThemeInput, ThemeModal, ThemeModalBody, ThemeProgress, ThemeSwitch, ThemeTabs } from "../reusables/NextuiTheme";
-import { DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "@next/font/google";
 import { ClockIcon, DiscordIcon, GraphicElementIcon, MainXpSmallIcon, MarketplaceXP2Icon, MarketplaceXP2SmallIcon, MarketplaceXPIcon, TelegramIcon, TwitterXIcon, ZealySmallIcon } from "../assets/icons";
 import { ModalBody, ModalContent, ModalHeader, Tab, useDisclosure } from "@nextui-org/react";
 import NextImage from "next/image"

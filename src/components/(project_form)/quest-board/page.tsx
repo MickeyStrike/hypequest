@@ -10,7 +10,7 @@ import { useFormContext } from "@/providers/project-form-stores";
 import { useGlobalContext } from "@/providers/stores";
 import { Avatar, Button, Card, CardBody, Checkbox, Chip, Input, Listbox, ListboxItem, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Progress, Select, SelectItem, Switch, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Textarea, Tooltip, cn, useDisclosure } from "@nextui-org/react";
 import { NextPage } from "next";
-import { DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "@next/font/google";
 import NextImage from "next/image";
 import React, { Fragment, useEffect } from "react";
 

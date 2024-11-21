@@ -12,7 +12,7 @@ import useMarketplaceService from "@/services/marketplace-service";
 import { UpdateLuckyWheelRequest, IClient, IConvertionConsumptionSpin, ICreateConvertionConsumptionSpin, IMarketplace, ISocialRaidPayload, LuckyWheelTypesEnum, IActivateZealyAdmin, IUpdateClientStage, StageRewardTypeEnum } from "@/types/service-types";
 import { CardBody, CardHeader, SelectItem } from "@nextui-org/react";
 import { useFormik, FormikErrors } from "formik";
-import { Manrope, Roboto } from "next/font/google";
+import { Manrope, Roboto } from "@next/font/google";
 import { FC, Fragment, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable, OnDragEndResponder } from "react-beautiful-dnd"
 import { toast } from "react-toastify";

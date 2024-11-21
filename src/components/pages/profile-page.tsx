@@ -4,7 +4,7 @@ import { DropzoneReturnValues, ThemeAvatar, ThemeButton, ThemeCard, ThemeChip, T
 import { getListDescription, middleEllipsisText, redirectToNewPage, submitFormikForm, useDebounce, useMetamaskLogo, useMinimizedState } from "@/helper";
 import { useGlobalContext } from "@/providers/stores";
 import { CardBody, ModalContent, Tab } from "@nextui-org/react";
-import { Manrope } from "next/font/google";
+import { Manrope } from "@next/font/google";
 import { FC, useEffect } from "react";
 import dataListChain from '@/localeData/list_chains.json'
 import NextImage from "next/image"

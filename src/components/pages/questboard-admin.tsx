@@ -9,7 +9,7 @@ import { IClient, IQuestboard, QuestboardTypeEnum } from "@/types/service-types"
 import { TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";
 import { DateTime } from "luxon";
 import { NextPage } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope } from "@next/font/google";
 import { FC, useEffect } from "react";
 import NextLink from "next/link"
 import { questCreationPath } from "@/helper/route-path";

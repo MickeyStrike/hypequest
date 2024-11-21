@@ -11,7 +11,7 @@ import { ActiveTabEnum, IClient } from '@/types/service-types';
 import { TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useFormik } from 'formik';
-import { DM_Sans, Manrope } from 'next/font/google'
+import { DM_Sans, Manrope } from '@next/font/google'
 import { useRouter } from 'next/navigation';
 import { Fragment, useEffect } from 'react';
 import { useAccount, useSignMessage } from 'wagmi';

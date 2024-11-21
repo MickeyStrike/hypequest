@@ -7,7 +7,7 @@ import useQuestService from "@/services/quest-service";
 import { IMission, StageRewardTypeEnum } from "@/types/service-types";
 import { TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";
 import { NextPage } from "next";
-import { Manrope } from "next/font/google";
+import { Manrope } from "@next/font/google";
 import { useRouter, useSearchParams } from "next/navigation";
 import NextLink from "next/link"
 import { createSingleQuestPath } from "@/helper/route-path";

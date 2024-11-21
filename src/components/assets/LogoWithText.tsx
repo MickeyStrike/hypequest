@@ -1,7 +1,7 @@
 "use client"
 import { FC } from "react"
 import { LogoOnly } from "."
-import { DM_Sans } from "next/font/google"
+import { DM_Sans } from "@next/font/google"
 import { useGlobalContext } from "@/providers/stores"
 import NextLink from "next/link"
 
