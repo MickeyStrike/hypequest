@@ -1,6 +1,6 @@
 "use client"
 import { AffiliateYellowIcon, AlertIcon, AntdInfoIcon, AntdSuccessIcon, ClockIcon, ConnectIcon, CopyIcon, DiscordIcon, LeaderboardYellowIcon, LinkIcon, LockIcon, LuckyWheelHeader, MainIconProject, MainXp2SmallIcon, MainXpSmallIcon, MarketplaceXP2Icon, MarketplaceXP2SmallIcon, ProfileYellowIcon, QuestionTooltipIcon, RedeemIcon, SocialRaidAcceptedIcon, SocialRaidDeclinedIcon, SpinIcon, TelegramIcon, TwitterXBlackIcon, TwitterXIcon, UploadIcon, XIcon, ZealySmallIcon } from "@/components/assets/icons";
-import { ConnectHypequestPublicModal, CountdownCircle, CustomContentSuccessTaskModal, CustomMilestoneRewardIcon, CustomProgressBar, CustomRangePicker, InfoTooltip, Inner2Wrapper, InnerWrapper, InventoryPublicModal, JoinHypequestPublicModal, LuckyWheel, OuterWrapper, ProjectQuestboardItem, QuestboardDetailProject, SelectedInventoryPublicModal, SpinConvertionPublicModal, SpinRewardPublicModal, VerifyButton, WelcomeHypequestPublicModal } from "@/components/reusables";
+import { ConnectHypequestPublicModal, CountdownCircle, CustomContentSuccessTaskModal, CustomMilestoneRewardIcon, CustomProgressBar, CustomRangePicker, InfoTooltip, Inner2Wrapper, InnerWrapper, InventoryPublicModal, JoinHypequestPublicModal, OuterWrapper, ProjectQuestboardItem, QuestboardDetailProject, SelectedInventoryPublicModal, SpinConvertionPublicModal, SpinRewardPublicModal, VerifyButton, WelcomeHypequestPublicModal } from "@/components/reusables";
 import { ThemeAccordion, ThemeAlert, ThemeAlertType, ThemeAvatar, ThemeButton, ThemeCard, ThemeCardBody, ThemeCardHeader, ThemeChip, ThemeDivider, ThemeDropdown, ThemeModal, ThemeModalBody, ThemeModalHeader, ThemePagination, ThemePopover, ThemeSelect, ThemeSpinner, ThemeSwitch, ThemeTable, ThemeTabs, ThemeTooltip } from "@/components/reusables/NextuiTheme";
 import { useGlobalContext } from "@/providers/stores";
 import { AccordionItem, AvatarGroup, Button, CardBody, DropdownItem, DropdownMenu, DropdownTrigger, ModalContent, PopoverContent, PopoverTrigger, SelectItem, Tab, TableBody, TableCell, TableColumn, TableHeader, TableRow } from "@nextui-org/react";
@@ -9,7 +9,7 @@ import SplashCoin from "@/components/assets/images/splash-coin.png"
 import NextImage from "next/image"
 import { FC, Fragment, ReactNode, useCallback, useEffect, useMemo, useRef } from "react";
 import { addSearchParams, capitalizeEveryWord, dateFromNow, getSignMessage, getTotalPaginationPage, loginTelegram, middleEllipsisText, nFormatter, numFormatter, redirectToNewPage, smoothScroll, smoothScrollByRef, useDebounce, useMinimizedState, useWindowFocus } from "@/helper";
-import { LuckyWheelItem } from "@/components/reusables/LuckyWheel";
+// import { LuckyWheelItem } from "@/components/reusables/LuckyWheel";
 import wheelStyles from "@/styles/components/reusables/LuckyWheel.module.css"
 import { ActiveTabKey, CustomQuestboard, GetHistoryResponse, GetLeaderboardResponse, GetPublicMission, IBannerProgressStages, IClientStage, ICreateQuestboard, IFollowTwitterMission, IGetProfile, IGetReferralList, IGetSocialRaidTweetMission, IGetUserInfo, IInventoryGet, ILikeTwitterMission, ILuckyWheel, ILuckyWheelCustom, IManageAdminInviterResponse, IPostTwitterMission, IPublicClientResponse, IRetweetTwitterMission, ISetReferralReturn, LeaderboardTypeEnum, LoginResponse, LuckyWheelTypesEnum, MetaLeaderboardResponse, MetaOGEnum, MissionTypesEnum, StageRewardTypeEnum, TypePointEnum } from "@/types/service-types";
 import usePublicService from "@/services/public-service";
@@ -114,6 +114,7 @@ interface IProjectState {
   questTab: QuestTabEnum;
   questboardPage: number;
   selectedStage?: IBannerProgressStages;
+  // isMounted: boolean
 }
 
 interface ProjectComponentPageProps {
@@ -150,6 +151,7 @@ const ProjectComponentPage: FC<ProjectComponentPageProps> = (props) => {
     isRedeemLoading: false,
     isGetReferralList: false,
     isVerifyLoading: false,
+    // isMounted: false,
     referralList: [],
     referralPage: 1,
     innerWidth: 0,
@@ -276,16 +278,16 @@ const ProjectComponentPage: FC<ProjectComponentPageProps> = (props) => {
     else return item.marketplaceId?.name ?? "Custom Item"
   }
 
-  const LUCKY_WHEEL_ITEM = useMemo<Array<LuckyWheelItem<ILuckyWheelCustom>>>(()=>{
-    return (state.clientProject?.luckywheels ?? []).map((lw) => ({
-      value: lw._id!!,
-      item: {
-        ...lw,
-        icon: lw.marketplaceId?.photo ?? lw.icon,
-        label: getLWLabel(lw)
-      }
-    }))
-  }, [state.clientProject?.luckywheels])
+  // const LUCKY_WHEEL_ITEM = useMemo<Array<LuckyWheelItem<ILuckyWheelCustom>>>(()=>{
+  //   return (state.clientProject?.luckywheels ?? []).map((lw) => ({
+  //     value: lw._id!!,
+  //     item: {
+  //       ...lw,
+  //       icon: lw.marketplaceId?.photo ?? lw.icon,
+  //       label: getLWLabel(lw)
+  //     }
+  //   }))
+  // }, [state.clientProject?.luckywheels])
 
   const getLeaderboardDatas = useMemo<Array<GetLeaderboardResponse & {rank: number}>>(()=>{
     return (state.leaderboards ?? []).map((ldb, index) => ({
@@ -1603,7 +1605,8 @@ const ProjectComponentPage: FC<ProjectComponentPageProps> = (props) => {
                 <TableColumn key="name">Name</TableColumn>
                 <TableColumn key="wallet">Wallet</TableColumn>
                 <TableColumn key="type">
-                  <ThemeSelect 
+                  Point
+                  {/* <ThemeSelect 
                     aria-label="Leaderboard Select"
                     size="sm" 
                     defaultSelectedKeys={new Set([state.leaderboardType])} 
@@ -1620,7 +1623,7 @@ const ProjectComponentPage: FC<ProjectComponentPageProps> = (props) => {
                     }}
                   >
                     {Object.entries(LeaderboardTypeEnum).map(([label,value]) => <SelectItem key={value} value={value} textValue={label.replace(/_/g, " ").toUpperCase()} aria-label={label}>{label.replace(/_/g, " ").toUpperCase()}</SelectItem>)}
-                  </ThemeSelect>
+                  </ThemeSelect> */}
                 </TableColumn>
                 <TableColumn key="share">Share</TableColumn>
               </TableHeader>
@@ -1672,247 +1675,247 @@ const ProjectComponentPage: FC<ProjectComponentPageProps> = (props) => {
         </div>
       )
     },
-    {
-      key: ActiveTabKey.LUCKY_SPIN,
-      title: "Lucky Spin",
-      isWrap: true,
-      isDisabled: !state.clientProject?.is_lucky_wheel_feature,
-      content: (
-        <LuckyWheel 
-          depedencyList={[state.selectedTab]}
-          loading={state.isLuckyWheelLoading}
-          items={LUCKY_WHEEL_ITEM}
-          renderItem={(item)=>(
-            <div className={item.item.type_reward === LuckyWheelTypesEnum.CUSTOM ? wheelStyles['lucky-spin-segment'] : wheelStyles['lucky-spin-segment-reverse']}>
-              {item.item.type_reward === LuckyWheelTypesEnum.CUSTOM && item.item.marketplaceId?.photo ?
-                <div className={wheelStyles['image-nft-wrapper']}>
-                  <NextImage 
-                    src={item.item.marketplaceId.photo}
-                    alt={item.item.marketplaceId.name}
-                    width={state.innerWidth < 600 ? 30 : 40}
-                    height={state.innerWidth < 600 ? 30 : 40}
-                    className="rounded-full overflow-hidden"
-                  />
-                </div>
-                :
-                <NextImage 
-                  src={getLWIcon(item.item)}
-                  alt={item.item.type_reward}
-                  width={state.innerWidth < 600 ? 15 : 25}
-                  height={state.innerWidth < 600 ? 15 : 25}
-                  className="rounded-full overflow-hidden"
-                />
-              }
-              <div>{getLWLabel(item.item)}</div>
-            </div>
-          )}
-          onSpin={moreSpinHandler}
-          onReSpin={(callback) => moreSpinHandler((vals)=>callback(vals[0]))}
-          onFinish={(selectedValue: string) => {
-            const finder = LUCKY_WHEEL_ITEM.find(lwi => lwi.value === selectedValue)
+    // {
+    //   key: ActiveTabKey.LUCKY_SPIN,
+    //   title: "Lucky Spin",
+    //   isWrap: true,
+    //   isDisabled: !state.clientProject?.is_lucky_wheel_feature,
+    //   content: (
+    //     <LuckyWheel 
+    //       depedencyList={[state.selectedTab]}
+    //       loading={state.isLuckyWheelLoading}
+    //       items={LUCKY_WHEEL_ITEM}
+    //       renderItem={(item)=>(
+    //         <div className={item.item.type_reward === LuckyWheelTypesEnum.CUSTOM ? wheelStyles['lucky-spin-segment'] : wheelStyles['lucky-spin-segment-reverse']}>
+    //           {item.item.type_reward === LuckyWheelTypesEnum.CUSTOM && item.item.marketplaceId?.photo ?
+    //             <div className={wheelStyles['image-nft-wrapper']}>
+    //               <NextImage 
+    //                 src={item.item.marketplaceId.photo}
+    //                 alt={item.item.marketplaceId.name}
+    //                 width={state.innerWidth < 600 ? 30 : 40}
+    //                 height={state.innerWidth < 600 ? 30 : 40}
+    //                 className="rounded-full overflow-hidden"
+    //               />
+    //             </div>
+    //             :
+    //             <NextImage 
+    //               src={getLWIcon(item.item)}
+    //               alt={item.item.type_reward}
+    //               width={state.innerWidth < 600 ? 15 : 25}
+    //               height={state.innerWidth < 600 ? 15 : 25}
+    //               className="rounded-full overflow-hidden"
+    //             />
+    //           }
+    //           <div>{getLWLabel(item.item)}</div>
+    //         </div>
+    //       )}
+    //       onSpin={moreSpinHandler}
+    //       onReSpin={(callback) => moreSpinHandler((vals)=>callback(vals[0]))}
+    //       onFinish={(selectedValue: string) => {
+    //         const finder = LUCKY_WHEEL_ITEM.find(lwi => lwi.value === selectedValue)
             
-            dispatch({ 
-              selectedSpinReward: finder?.item,
-              isLuckyWheelLoading: false
-            })
+    //         dispatch({ 
+    //           selectedSpinReward: finder?.item,
+    //           isLuckyWheelLoading: false
+    //         })
 
-            if(token) getUserInfo(props.project, {Authorization: "Bearer " + token}, {type_leaderboard: state.leaderboardType})
-              .then(res => dispatch({userInfo: res.data.data}))
-              .catch(err => console.log(err))
-          }}
-          customRenderer={(main, callback) => (
-            <Fragment>
-              <div className={`flex flex-col-reverse xl:flex-row gap-4 w-full overflow-hidden ${wheelStyles['lucky-spin-tab']}`}>
-                <div className="flex flex-col gap-2 w-full">
-                  <LuckyWheelHeader />
-                  {main}
-                </div>
-                <div className="flex flex-col gap-2 w-full">
-                  <div 
-                    className="flex flex-col gap-2 backdrop-blur-2xl rounded-xl w-full"
-                    style={{
-                      background: "linear-gradient(234deg, rgba(143, 10, 10, 0.00) 23.83%, rgba(42, 0, 111, 0.15) 49.27%, rgba(183, 145, 48, 0.31) 107.43%, rgba(143, 10, 10, 0.00) 145.71%), #2E2E2E",
-                    }}
-                  > 
-                    <div className="p-4 flex flex-row items-center justify-between w-full">
-                      <div className="flex flex-row items-center gap-2">
-                        <ThemeAvatar radius="full" size="lg" src={profile?.avatar ?? "/metamask.png"} />
-                        <div className={`flex flex-col gap-1 text-white ${manrope700.className}`}>
-                          <span className="text-[14px]">Username</span>
-                          <span className="text-[29px] font-bold leading-8">{getDisplayName()}</span>
-                        </div>
-                      </div>
-                      <ThemeButton 
-                        variant="light" 
-                        className="flex flex-row items-center gap-2 h-full text-white" 
-                        radius="full"
-                        onClick={inventoryGetService}
-                        disableRipple
-                        isDisabled
-                      >
-                        <ThemeAvatar 
-                          size="md" 
-                          icon={<RedeemIcon />} 
-                          className="bg-[#2F0D59]" 
-                          isBordered color="secondary" 
-                        />
-                        <span className="text-[20px]">Redeem</span>
-                      </ThemeButton>
-                    </div>
-                    <ThemeDivider />
-                    <div className="p-4 flex flex-row justify-between">
-                      <div className="flex flex-row gap-2">
-                        <CustomMilestoneRewardIcon 
-                          imgHref="/xp.png"
-                          imgId="community_xp"
-                          width="37"
-                          height="37"
-                        />
-                        <div className={`flex flex-col gap-1 text-white ${manrope600.className}`}>
-                          <span className="leading-8 text-[30px]">{numFormatter(state.userInfo?.point ?? 0)}</span>
-                          <span className="text-[12px]">{state.clientProject?.name} XP</span>
-                        </div>
-                      </div>
-                      <div className="flex flex-row gap-2">
-                        <ZealySmallIcon />
-                        <div className={`flex flex-col gap-1 text-white ${manrope600.className}`}>
-                          <span className="leading-8 text-[30px]">{numFormatter(state.userInfo?.zealy_xp ?? 0)}</span>
-                          <span className="text-[12px]">Zealy XP</span>
-                        </div>
-                      </div>
-                      <div className="flex flex-row gap-2">
-                        <SpinIcon />
-                        <div className={`flex flex-col gap-1 text-white ${manrope600.className}`}>
-                          <span className="leading-8 text-[30px]">{numFormatter(state.userInfo?.free_spin ?? 0)}</span>
-                          <span className="text-[12px]">Spins</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={`${isLight ? "text-black" : "text-white"} ${manrope800.className} text-[55px]`}>
-                    Get Extra Spins!
-                  </div>
-                  <div>
-                    <ThemeButton 
-                      radius="full" 
-                      startContent={<UploadIcon />}
-                      onClick={() => shareWithIntent({
-                        type: MetaOGEnum.LUCKYWHEEL
-                      })}
-                      isLoading={state.isLuckyWheelLoading}
-                      isDisabled={state.isLuckyWheelLoading}
-                    >
-                      Share
-                    </ThemeButton>
-                  </div>
-                  <ThemeDivider className="my-4" />
-                  <div className="flex flex-row items-center gap-2">
-                    <ThemeButton 
-                      radius="full" 
-                      color="warning" 
-                      onClick={()=>moreSpinHandler(callback)}
-                      isLoading={state.isLuckyWheelLoading}
-                      isDisabled={state.isLuckyWheelLoading}
-                    >
-                      Spin Now
-                      </ThemeButton>
-                    <ThemeButton 
-                      radius="full" 
-                      onClick={()=>dispatch({isConvertionModal: true})}
-                      isLoading={state.isLuckyWheelLoading}
-                      isDisabled={state.isLuckyWheelLoading}
-                    >
-                      Get More Spins
-                    </ThemeButton>
-                  </div>
-                </div>
-              </div>
-              <SpinRewardPublicModal 
-                isOpen={!!state.selectedSpinReward} 
-                onClose={()=>dispatch({selectedSpinReward: undefined})}
-                selectedSpinReward={state.selectedSpinReward} 
-                userInfo={state.userInfo}
-                onSpin={()=>{
-                  if((state.userInfo?.free_spin ?? 0) > 0) {
-                    moreSpinHandler(callback)
-                    if(state.userInfo) dispatch({
-                      selectedSpinReward: undefined,
-                      userInfo: {
-                        ...state.userInfo,
-                        free_spin: state.isAvailableFreeSpin ? state.userInfo.free_spin : state.userInfo.free_spin - 1,
-                      },
-                      isAvailableFreeSpin: false
-                    })
-                  }
-                  else {
-                    dispatch({
-                      isConvertionModal: true,
-                      selectedSpinReward: undefined
-                    })
-                  }
-                }}
-                onShare={() => state.selectedSpinReward?._id && shareWithIntent({
-                  type: MetaOGEnum.LUCKYWHEEL_PRIZE,
-                  luckyWheelId: state.selectedSpinReward._id
-                })}
-              />
-              <SpinConvertionPublicModal 
-                isLoading={state.isLuckyWheelLoading}
-                isOpen={state.isConvertionModal} 
-                onClose={()=>dispatch({isConvertionModal: false})}
-                clientProject={state.clientProject}
-                onSelectConvertion={(convertion) => {
-                  const isValidConvert = (() => {
-                    if(state.isLuckyWheelConsumesZealyXP) {
-                      if((state.userInfo?.zealy_xp ?? 0) >= convertion.amount_consumption) return true
-                      else return false
-                    }
-                    else {
-                      if((state.userInfo?.point ?? 0) >= convertion.amount_consumption) return true
-                      else return false
-                    }
-                  })()
+    //         if(token) getUserInfo(props.project, {Authorization: "Bearer " + token}, {type_leaderboard: state.leaderboardType})
+    //           .then(res => dispatch({userInfo: res.data.data}))
+    //           .catch(err => console.log(err))
+    //       }}
+    //       customRenderer={(main, callback) => (
+    //         <Fragment>
+    //           <div className={`flex flex-col-reverse xl:flex-row gap-4 w-full overflow-hidden ${wheelStyles['lucky-spin-tab']}`}>
+    //             <div className="flex flex-col gap-2 w-full">
+    //               <LuckyWheelHeader />
+    //               {main}
+    //             </div>
+    //             <div className="flex flex-col gap-2 w-full">
+    //               <div 
+    //                 className="flex flex-col gap-2 backdrop-blur-2xl rounded-xl w-full"
+    //                 style={{
+    //                   background: "linear-gradient(234deg, rgba(143, 10, 10, 0.00) 23.83%, rgba(42, 0, 111, 0.15) 49.27%, rgba(183, 145, 48, 0.31) 107.43%, rgba(143, 10, 10, 0.00) 145.71%), #2E2E2E",
+    //                 }}
+    //               > 
+    //                 <div className="p-4 flex flex-row items-center justify-between w-full">
+    //                   <div className="flex flex-row items-center gap-2">
+    //                     <ThemeAvatar radius="full" size="lg" src={profile?.avatar ?? "/metamask.png"} />
+    //                     <div className={`flex flex-col gap-1 text-white ${manrope700.className}`}>
+    //                       <span className="text-[14px]">Username</span>
+    //                       <span className="text-[29px] font-bold leading-8">{getDisplayName()}</span>
+    //                     </div>
+    //                   </div>
+    //                   <ThemeButton 
+    //                     variant="light" 
+    //                     className="flex flex-row items-center gap-2 h-full text-white" 
+    //                     radius="full"
+    //                     onClick={inventoryGetService}
+    //                     disableRipple
+    //                     isDisabled
+    //                   >
+    //                     <ThemeAvatar 
+    //                       size="md" 
+    //                       icon={<RedeemIcon />} 
+    //                       className="bg-[#2F0D59]" 
+    //                       isBordered color="secondary" 
+    //                     />
+    //                     <span className="text-[20px]">Redeem</span>
+    //                   </ThemeButton>
+    //                 </div>
+    //                 <ThemeDivider />
+    //                 <div className="p-4 flex flex-row justify-between">
+    //                   <div className="flex flex-row gap-2">
+    //                     <CustomMilestoneRewardIcon 
+    //                       imgHref="/xp.png"
+    //                       imgId="community_xp"
+    //                       width="37"
+    //                       height="37"
+    //                     />
+    //                     <div className={`flex flex-col gap-1 text-white ${manrope600.className}`}>
+    //                       <span className="leading-8 text-[30px]">{numFormatter(state.userInfo?.point ?? 0)}</span>
+    //                       <span className="text-[12px]">{state.clientProject?.name} XP</span>
+    //                     </div>
+    //                   </div>
+    //                   <div className="flex flex-row gap-2">
+    //                     <ZealySmallIcon />
+    //                     <div className={`flex flex-col gap-1 text-white ${manrope600.className}`}>
+    //                       <span className="leading-8 text-[30px]">{numFormatter(state.userInfo?.zealy_xp ?? 0)}</span>
+    //                       <span className="text-[12px]">Zealy XP</span>
+    //                     </div>
+    //                   </div>
+    //                   <div className="flex flex-row gap-2">
+    //                     <SpinIcon />
+    //                     <div className={`flex flex-col gap-1 text-white ${manrope600.className}`}>
+    //                       <span className="leading-8 text-[30px]">{numFormatter(state.userInfo?.free_spin ?? 0)}</span>
+    //                       <span className="text-[12px]">Spins</span>
+    //                     </div>
+    //                   </div>
+    //                 </div>
+    //               </div>
+    //               <div className={`${isLight ? "text-black" : "text-white"} ${manrope800.className} text-[55px]`}>
+    //                 Get Extra Spins!
+    //               </div>
+    //               <div>
+    //                 <ThemeButton 
+    //                   radius="full" 
+    //                   startContent={<UploadIcon />}
+    //                   onClick={() => shareWithIntent({
+    //                     type: MetaOGEnum.LUCKYWHEEL
+    //                   })}
+    //                   isLoading={state.isLuckyWheelLoading}
+    //                   isDisabled={state.isLuckyWheelLoading}
+    //                 >
+    //                   Share
+    //                 </ThemeButton>
+    //               </div>
+    //               <ThemeDivider className="my-4" />
+    //               <div className="flex flex-row items-center gap-2">
+    //                 <ThemeButton 
+    //                   radius="full" 
+    //                   color="warning" 
+    //                   onClick={()=>moreSpinHandler(callback)}
+    //                   isLoading={state.isLuckyWheelLoading}
+    //                   isDisabled={state.isLuckyWheelLoading}
+    //                 >
+    //                   Spin Now
+    //                   </ThemeButton>
+    //                 <ThemeButton 
+    //                   radius="full" 
+    //                   onClick={()=>dispatch({isConvertionModal: true})}
+    //                   isLoading={state.isLuckyWheelLoading}
+    //                   isDisabled={state.isLuckyWheelLoading}
+    //                 >
+    //                   Get More Spins
+    //                 </ThemeButton>
+    //               </div>
+    //             </div>
+    //           </div>
+    //           <SpinRewardPublicModal 
+    //             isOpen={!!state.selectedSpinReward} 
+    //             onClose={()=>dispatch({selectedSpinReward: undefined})}
+    //             selectedSpinReward={state.selectedSpinReward} 
+    //             userInfo={state.userInfo}
+    //             onSpin={()=>{
+    //               if((state.userInfo?.free_spin ?? 0) > 0) {
+    //                 moreSpinHandler(callback)
+    //                 if(state.userInfo) dispatch({
+    //                   selectedSpinReward: undefined,
+    //                   userInfo: {
+    //                     ...state.userInfo,
+    //                     free_spin: state.isAvailableFreeSpin ? state.userInfo.free_spin : state.userInfo.free_spin - 1,
+    //                   },
+    //                   isAvailableFreeSpin: false
+    //                 })
+    //               }
+    //               else {
+    //                 dispatch({
+    //                   isConvertionModal: true,
+    //                   selectedSpinReward: undefined
+    //                 })
+    //               }
+    //             }}
+    //             onShare={() => state.selectedSpinReward?._id && shareWithIntent({
+    //               type: MetaOGEnum.LUCKYWHEEL_PRIZE,
+    //               luckyWheelId: state.selectedSpinReward._id
+    //             })}
+    //           />
+    //           <SpinConvertionPublicModal 
+    //             isLoading={state.isLuckyWheelLoading}
+    //             isOpen={state.isConvertionModal} 
+    //             onClose={()=>dispatch({isConvertionModal: false})}
+    //             clientProject={state.clientProject}
+    //             onSelectConvertion={(convertion) => {
+    //               const isValidConvert = (() => {
+    //                 if(state.isLuckyWheelConsumesZealyXP) {
+    //                   if((state.userInfo?.zealy_xp ?? 0) >= convertion.amount_consumption) return true
+    //                   else return false
+    //                 }
+    //                 else {
+    //                   if((state.userInfo?.point ?? 0) >= convertion.amount_consumption) return true
+    //                   else return false
+    //                 }
+    //               })()
                   
-                  if(isValidConvert) {
-                    dispatch({isLuckyWheelLoading: true})
-                    luckyWheelConvertSpin(props.project, {
-                      amount_spin: convertion.amount_spin,
-                      type_point: state.isLuckyWheelConsumesZealyXP ? TypePointEnum.ZEALY : TypePointEnum.XP
-                    })
-                      .then(() => {
-                        openModal({
-                          type: AlertModalType.SUCCESS,
-                          title: "Success!",
-                          description: `Successfully convert ${convertion.amount_spin} spins!`
-                        })
+    //               if(isValidConvert) {
+    //                 dispatch({isLuckyWheelLoading: true})
+    //                 luckyWheelConvertSpin(props.project, {
+    //                   amount_spin: convertion.amount_spin,
+    //                   type_point: state.isLuckyWheelConsumesZealyXP ? TypePointEnum.ZEALY : TypePointEnum.XP
+    //                 })
+    //                   .then(() => {
+    //                     openModal({
+    //                       type: AlertModalType.SUCCESS,
+    //                       title: "Success!",
+    //                       description: `Successfully convert ${convertion.amount_spin} spins!`
+    //                     })
         
-                        if(state.userInfo) dispatch({
-                          userInfo: {
-                            ...state.userInfo,
-                            free_spin: (state.userInfo?.free_spin ?? 0) + convertion.amount_spin,
-                            point: !state.isLuckyWheelConsumesZealyXP ? state.userInfo.point - convertion.amount_consumption : state.userInfo.point,
-                            zealy_xp: state.isLuckyWheelConsumesZealyXP ? state.userInfo.zealy_xp - convertion.amount_consumption : state.userInfo.zealy_xp,
-                          },
-                          isConvertionModal: false
-                        })
-                      })
-                      .catch(err => console.log(err))
-                      .finally(()=>dispatch({isLuckyWheelLoading: false}))
-                  }
-                  else openModal({
-                    type: AlertModalType.ERROR,
-                    title: "Failed!",
-                    description: "Your XP is not enough!"
-                  })
-                }}
-                isZealyConsume={state.isLuckyWheelConsumesZealyXP}
-                onChangeConsume={(isLuckyWheelConsumesZealyXP) => dispatch({isLuckyWheelConsumesZealyXP})}
-              />
-            </Fragment>
-          )}
-        />
-      )
-    },
+    //                     if(state.userInfo) dispatch({
+    //                       userInfo: {
+    //                         ...state.userInfo,
+    //                         free_spin: (state.userInfo?.free_spin ?? 0) + convertion.amount_spin,
+    //                         point: !state.isLuckyWheelConsumesZealyXP ? state.userInfo.point - convertion.amount_consumption : state.userInfo.point,
+    //                         zealy_xp: state.isLuckyWheelConsumesZealyXP ? state.userInfo.zealy_xp - convertion.amount_consumption : state.userInfo.zealy_xp,
+    //                       },
+    //                       isConvertionModal: false
+    //                     })
+    //                   })
+    //                   .catch(err => console.log(err))
+    //                   .finally(()=>dispatch({isLuckyWheelLoading: false}))
+    //               }
+    //               else openModal({
+    //                 type: AlertModalType.ERROR,
+    //                 title: "Failed!",
+    //                 description: "Your XP is not enough!"
+    //               })
+    //             }}
+    //             isZealyConsume={state.isLuckyWheelConsumesZealyXP}
+    //             onChangeConsume={(isLuckyWheelConsumesZealyXP) => dispatch({isLuckyWheelConsumesZealyXP})}
+    //           />
+    //         </Fragment>
+    //       )}
+    //     />
+    //   )
+    // },
     {
       key: ActiveTabKey.QUEST,
       title: "Quest",

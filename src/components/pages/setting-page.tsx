@@ -703,7 +703,7 @@ const SettingComponentPage: FC<SettingComponentPageProps> = (props) => {
           </CardBody>
         }
       </ThemeCard>
-      <ThemeCard>
+      {/* <ThemeCard>
         <CardHeader className="flex flex-row justify-between gap-2 lg:p-8">
           <h1 className={`${manrope800.className} text-[30px]`}>Lucky Spin</h1>
           <ThemeSwitch 
@@ -1093,7 +1093,7 @@ const SettingComponentPage: FC<SettingComponentPageProps> = (props) => {
             </div>
           </CardBody>
         }
-      </ThemeCard>
+      </ThemeCard> */}
       {/* <ThemeCard>
         <CardHeader className="flex flex-row justify-between gap-2 lg:p-8">
           <h1 className={`${manrope800.className} text-[30px]`}>Milestone & Rewards</h1>
